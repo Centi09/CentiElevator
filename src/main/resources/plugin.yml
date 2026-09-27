@@ -1,0 +1,21 @@
+name: CentiElevator
+version: 1.0.0
+main: de.centi.centielevator.CentiElevator
+api-version: 1.21
+author: Centi09
+description: Modernes Aufzugssystem fuer Paper und Purpur Server
+
+commands:
+  centielevator:
+    description: CentiElevator Hauptbefehl
+    usage: /<command> [reload]
+    permission: centielevator.admin
+    aliases: [ce, elevator]
+
+permissions:
+  centielevator.use:
+    description: Erlaubt das Nutzen von Aufzuegen
+    default: true
+  centielevator.admin:
+    description: Erlaubt das Neuladen des Plugins
+    default: op

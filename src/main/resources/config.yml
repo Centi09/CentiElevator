@@ -1,0 +1,60 @@
+# CentiElevator Konfiguration
+# Entwickelt von Centi09
+# Befehl zum Neuladen: /ce reload
+
+# Welche Bloecke gelten als Aufzug?
+# Standard: DAYLIGHT_DETECTOR (Tageslichtsensor)
+elevator-blocks:
+  - "DAYLIGHT_DETECTOR"
+
+# Tageslichtsensor-Steuerung:
+# Gelber Sensor (Tag) = Etage AKTIV
+# Grauer Sensor (Invertiert/Nacht) = Etage AUSSER BETRIEB (wird uebersprungen)
+toggleable-by-invert: true
+
+# Maximale Suchdistanz in Bloecken nach oben und unten
+max-distance: 64
+
+# Mindestabstand zwischen zwei Etagen
+min-distance: 2
+
+# Cooldown in Millisekunden (verhindert versehentliches Mehrfach-Springen)
+cooldown-ms: 350
+
+# Sound-Effekte beim Teleportieren
+sound:
+  enabled: true
+  type: "ENTITY_ENDERMAN_TELEPORT"
+  volume: 0.8
+  pitch: 1.4
+
+# Partikel-Effekte beim Teleportieren
+particles:
+  enabled: true
+  type: "PORTAL"
+  count: 20
+
+# Nachrichten & Actionbar
+# Verfuegbare Platzhalter: {floor} (aktuelle Etage), {total} (Gesamtetagen)
+messages:
+  # Actionbar-Anzeige beim Hochfahren
+  floor-up: "&8[&5▲&8] &7Etage &d{floor}&8/&f{total}"
+
+  # Actionbar-Anzeige beim Runterfahren
+  floor-down: "&8[&5▼&8] &7Etage &d{floor}&8/&f{total}"
+
+  # Meldung wenn die aktuelle Etage deaktiviert (grau) ist
+  disabled: "&8[&c✕&8] &cDiese Etage ist ausser Betrieb!"
+
+  # Info beim Umschalten per Rechtsklick
+  toggled-on: "&8[&d✓&8] &dEtage aktiviert &7(Aufzug betriebsbereit)"
+  toggled-off: "&8[&c✕&8] &cEtage deaktiviert &7(Ausser Betrieb)"
+
+  # Fehlermeldung wenn Ziel blockiert ist (z.B. Decke zu niedrig)
+  blocked: "&cKein sicherer Platz auf dieser Etage!"
+
+  # Keine Berechtigung
+  no-permission: "&cDu hast keine Berechtigung fuer diesen Befehl!"
+
+  # Reload-Bestaetigung
+  reloaded: "&8[&5CentiElevator&8] &dKonfiguration wurde neu geladen."
